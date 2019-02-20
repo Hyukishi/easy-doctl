@@ -71,7 +71,7 @@ while [ "$input" != "quit" ]; do
 		read -rp "Record name (e.g. www): " a2
 		if [[ "$a1" == "A" ]]; then
 			read -rp "DigitalOcean Droplet IP: " a4
-			$doctl compute domain records create --record-type "$a1" --record-name "$a2" --record-data "$a0" "$a4"
+			$doctl compute domain records create "$a0" --record-type "$a1" --record-name "$a2" --record-data "$a4"
 			pause
 			clear
 			return
