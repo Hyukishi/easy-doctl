@@ -16,6 +16,7 @@ do
 		echo "5: Manage Floating IPs"
 		echo "6: Manage Droplet"
 		echo "7: Perform droplet actions"
+		echo "8: Make all snapshots available to all US regions"
 		echo ""
 		read -rp "Enter the corresponding number and press ENTER: " input
 		clear
@@ -63,31 +64,28 @@ dodropletaction(){
 return
 }
 
+dosnapavailability(){
+	$(command -v dosnapavailability.sh)
+}
+
 # Calls to functions
-if [[ "$input" == "1" ]]; then
-doauth
-fi
-
-if [[ "$input" == "2" ]]; then
-dodns
-fi
-
-if [[ "$input" == "3" ]]; then
-dofirewall
-fi
-
-if [[ "$input" == "4" ]]; then
-dossh
-fi
-
-if [[ "$input" == "5" ]]; then
-dofloat
-fi
-
-if [[ "$input" == "6" ]]; then
-dodroplet
-fi
-
-
+case "$input" in
+	1) doauth
+		;;
+	2) dodns
+		;;
+	3) dofirewall
+		;;
+	4) dossh
+		;;
+	5) dofloat
+		;;
+	6) dodroplet
+		;;
+	7) dodropletaction
+		;;
+	8) dosnapavailability
+		;;
+esac
 
 done
