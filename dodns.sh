@@ -49,9 +49,7 @@ while [ "$input" != "quit" ]; do
 		clear
 		return
 }
-			if [[ "$input" == "1" ]]; then
-			create_domain
-		fi
+
 	delete_domain(){
 		read -rp "Domain Name: " a1
 		echo ""
@@ -60,9 +58,6 @@ while [ "$input" != "quit" ]; do
 		clear
 		return
 }
-			if [[ "$input" == "2" ]]; then
-			delete_domain
-		fi
 
 	create_record(){
 		read -rp "Domain for record to be created under: " a0
@@ -83,9 +78,6 @@ while [ "$input" != "quit" ]; do
 		clear
 		return
 }
-		if [[ "$input" == "3" ]]; then
-	create_record
-	fi
 
 	delete_record(){
 		read -rp "Domain the record belongs to: " a1
@@ -113,9 +105,6 @@ while [ "$input" != "quit" ]; do
 		clear
 		return
 }
-	if [[ "$input" == "4" ]]; then
-	delete_record
-	fi
 
 	print_dnsrecords(){
 	read -rp "Enter the domain for the records you want to print: " a1
@@ -134,9 +123,6 @@ while [ "$input" != "quit" ]; do
 			return
 		fi
 	}
-	if [[ "$input" == "5" ]]; then
-		print_dnsrecords
-	fi
 
 	print_domains(){
 	read -rp "Print to screen or dump to file: " a1
@@ -154,9 +140,21 @@ while [ "$input" != "quit" ]; do
 			return
 		fi
 	}
-	if [[ "$input" == "6" ]]; then
-		print_domains
-	fi
+
+case "$input" in
+	1) create_domain
+		;;
+	2) delete_domain
+		;;
+	3) create_record
+		;;
+	4) delete_record
+		;;
+	5) print_dnsrecords
+		;;
+	6) print_domains
+		;;
+esac
 
 done
 

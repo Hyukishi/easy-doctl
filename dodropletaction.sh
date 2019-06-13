@@ -281,62 +281,36 @@ done
 	return
 }
 
-if [[ "$input" == "1" ]]; then
-	disable_backups
-fi
-
-if [[ "$input" == "2" ]]; then
-	reboot_droplet
-fi
-
-if [[ "$input" == "3" ]]; then
-	power_cycle
-fi
-
-if [[ "$input" == "4" ]]; then
-	shutdown_droplet
-fi
-
-if [[ "$input" == "5" ]]; then
-	poweroff_droplet
-fi
-
-if [[ "$input" == "6" ]]; then
-	poweron_droplet
-fi
-
-if [[ "$input" == "7" ]]; then
-	powerreset_droplet
-fi
-
-if [[ "$input" == "8" ]]; then
-	ipv6_droplet
-fi
-
-if [[ "$input" == "9" ]]; then
-	private_networking
-fi
-
-if [[ "$input" == "10" ]]; then
-	upgrade_droplet
-fi
-
-if [[ "$input" == "11" ]]; then
-	resize_ram
-fi
-
-if [[ "$input" == "12" ]]; then
-	resize_disk
-fi
-
-if [[ "$input" == "13" ]]; then
-	rename_droplet
-fi
-
-if [[ "$input" == "14" ]]; then
-	create_snapshot
-fi
-
-
+# Call to functions
+case "$input" in
+	1) disable_backups
+		;;
+	2) reboot_droplet
+		;;
+	3) power_cycle
+		;;
+	4) shutdown_droplet
+		;;
+	5) poweroff_droplet
+		;;
+	6) poweron_droplet
+		;;
+	7) powerreset_droplet
+		;;
+	8) ipv6_droplet
+		;;
+	9) private_networking
+		;;
+	10) upgrade_droplet
+		;;
+	11) resize_ram
+		;;
+	12) resize_disk
+		;;
+	13) rename_droplet
+		;;
+	14) create_snapshot
+		;;
+esac
 
 done

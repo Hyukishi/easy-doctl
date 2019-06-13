@@ -315,52 +315,32 @@ remove_tags(){
 	return
 }
 
-if [[ "$input" == "1" ]]; then
-	list_fw
-fi
-
-if [[ "$input" == "2" ]]; then
-	list_fw_bydroplet
-fi
-
-if [[ "$input" == "3" ]]; then
-	list_rules_bydroplet
-fi
-
-if [[ "$input" == "4" ]]; then
-	create_fw
-fi
-
-if [[ "$input" == "5" ]]; then
-	delete_fw
-fi
-
-if [[ "$input" == "6" ]]; then
-	add_rule
-fi
-
-if [[ "$input" == "7" ]]; then
-	remove_rule
-fi
-
-if [[ "$input" == "8" ]]; then
-	add_droplet
-fi
-
-if [[ "$input" == "9" ]]; then
-	remove_droplet
-fi
-
-if [[ "$input" == "10" ]]; then
-	update_fw
-fi
-
-if [[ "$input" == "11" ]]; then
-	add_tags
-fi
-
-if [[ "$input" == "12" ]]; then
-	remove_tags
-fi
+# Call to functions
+case "$input" in
+	1) list_fw
+		;;
+	2) list_fw_bydroplet
+		;;
+	3) list_rules_bydroplet
+		;;
+	4) create_fw
+		;;
+	5) delete_fw
+		;;
+	6) add_rule
+		;;
+	7) remove_rule
+		;;
+	8) add_droplet
+		;;
+	9) remove_droplet
+		;;
+	10) update_fw
+		;;
+	11) add_tags
+		;;
+	12) remove_tags
+		;;
+esac
 
 done

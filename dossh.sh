@@ -95,12 +95,12 @@ ssh_args=()
 	return
 }
 
-if [[ "$input" == "1" ]]; then
-	ssh_public_ipv4
-fi
-
-if [[ "$input" == "2" ]]; then
-	ssh_private_ipv4
-fi
+# Calls to functions
+case "$input" in
+	1) ssh_public_ipv4
+		;;
+	2) ssh_private_ipv4
+		;;
+esac
 
 done

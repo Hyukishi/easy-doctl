@@ -143,24 +143,17 @@ unassign_float(){
 }
 
 # Calls to functions
-if [[ "$input" == "1" ]]; then
-	list_float
-fi
-
-if [[ "$input" == "2" ]]; then
-	create_float
-fi
-
-if [[ "$input" == "3" ]]; then
-	delete_float
-fi
-
-if [[ "$input" == "4" ]]; then
-	assign_float
-fi
-
-if [[ "$input" == "5" ]]; then
-	unassign_float
-fi
+case "$input" in
+	1) list_float
+		;;
+	2) create_float
+		;;
+	3) delete_float
+		;;
+	4) assign_float
+		;;
+	5) unassign_float
+		;;
+esac
 
 done

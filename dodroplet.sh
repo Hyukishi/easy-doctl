@@ -277,52 +277,31 @@ done
 }
 
 # Calls to functions
-if [[ "$input" == "1" ]]; then
-	list_droplets
-fi
-
-if [[ "$input" == "2" ]]; then
-	droplet_details
-fi
-
-if [[ "$input" == "3" ]]; then
-	create_droplet
-fi
-
-if [[ "$input" == "4" ]]; then
-	delete_droplet
-fi
-
-if [[ "$input" == "5" ]]; then
-	show_neighbors
-fi
-
-if [[ "$input" == "6" ]]; then
-	show_snapshots
-fi
-
-if [[ "$input" == "7" ]]; then
-	show_backups
-fi
-
-if [[ "$input" == "8" ]]; then
-	tag_droplet
-fi
-
-if [[ "$input" == "9" ]]; then
-	untag_droplet
-fi
-
-if [[ "$input" == "10" ]]; then
-	create_tag
-fi
-
-if [[ "$input" == "11" ]]; then
-	delete_tag
-fi
-
-if [[ "$input" == "12" ]]; then
-	get_droplet_actions
-fi
+case "$input" in
+	1) list_droplets
+		;;
+	2) droplet_details
+		;;
+	3) create_droplet
+		;;
+	4) delete_droplet
+		;;
+	5) show_neighbors
+		;;
+	6) show_snapshots
+		;;
+	7) show_backups
+		;;
+	8) tag_droplet
+		;;
+	9) untag_droplet
+		;;
+	10) create_tag
+		;;
+	11) delete_tag
+		;;
+	12) get_droplet_actions
+		;;
+esac
 
 done
